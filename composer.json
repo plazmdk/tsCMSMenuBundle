@@ -1,0 +1,12 @@
+{
+    "name": "tsCMS/MenuBundle",
+    "autoload": {
+        "psr-0" : {
+            "tsCMS\\MenuBundle" : "src"
+        }
+    },
+    "require": {
+        "tsCMS/SystemBundle": "*",
+        "lazyants/dynatree-bundle": "*"
+    }
+}
