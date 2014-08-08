@@ -8,5 +8,11 @@
     "require": {
         "tsCMS/SystemBundle": "*",
         "lazyants/dynatree-bundle": "*"
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@github.com::plazmdk/tsCMSSystemBundle.git"
+        }
+    ]
 }
