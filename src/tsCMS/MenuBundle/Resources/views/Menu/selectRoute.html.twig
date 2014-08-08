@@ -1,0 +1,62 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">{{ "selectroute.title"|trans }}</h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <table class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>{{ "selectroute.route.title"|trans }}</th>
+                    <th>{{ "selectroute.route.bundle"|trans }}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for route in result %}
+                <tr>
+                    <td>{{ route.title }}</td>
+                    <td>{{ route.bundle }}</td>
+                    <td class="text-right">
+                        <form class="selectrouteform">
+                            <input type="hidden" name="targetid" class="targetid"/>
+                            <input type="hidden" name="displayvalue" value="{{ route.title }} ({{ route.path }})"/>
+                            <input type="hidden" name="value" value="{{ route.name }}"/>
+                            <input type="hidden" name="path" value="{{ route.path }}"/>
+                            <input type="hidden" name="title" value="{{ route.title }}"/>
+                            <input type="submit" class="btn btn-primary btn-xs" value="{{ "selectroute.select"|trans }}"/>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="paging_bootstrap pull-right">
+            <ul class="pagination">
+                {% for p in pages %}
+                    <li {% if p==page %}class="active"{% endif %}>
+                        <a href="#">
+                            {{ p }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(".selectrouteform").submit(function() {
+        var data = $(this).serializeObject();
+
+        var modal = $(this).closest(".modal");
+        var parent = modal.data("parent");
+        if (parent) {
+            parent.trigger("routeSelected",data);
+        }
+        modal.modal("hide");
+        return false;
+    });
+</script>

@@ -1,0 +1,22 @@
+{% extends 'tsCMSSystemBundle::layout.html.twig' %}
+{% block title %}Menuadministration{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-xs-6">
+        {{ form(form) }}
+    </div>
+
+    {% if menu %}
+    <div class="col-xs-4 col-xs-push-1">
+        <div class="form-group">
+            <div>
+                <label>Funktioner</label>
+            </div>
+            <a class="btn btn-danger" href="{{ path("tscms_menu_menu_delete",{id: menu.id}) }}">Slet</a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+
+{% endblock %}

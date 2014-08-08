@@ -1,0 +1,14 @@
+menuitem:
+    route: Destination
+    title: Menutekst
+    stickytitle: Automatisk menutekst (følg sidens titel)
+    parent: Underpunkt til
+    save: Gem
+
+
+selectroute:
+    title: Vælg destination
+    route:
+        title: Navn
+        bundle: Type
+    select: Vælg

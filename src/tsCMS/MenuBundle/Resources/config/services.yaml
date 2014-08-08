@@ -1,0 +1,12 @@
+services:
+    tsCMS_menu.menuservice:
+        class: tsCMS\MenuBundle\Services\MenuService
+        arguments: [ @doctrine.orm.entity_manager, @router ]
+        tags:
+            - { name: kernel.event_listener, event: tsCMS.buildSiteStructure, method: onBuildSitestructure, priority: 255 }
+            - { name: kernel.event_listener, event: tsCMS.updateRoute, method: onRouteUpdate, priority: 255 }
+    tsCMS.twig.menuExtension:
+        class: tsCMS\MenuBundle\Twig\MenuExtension
+        arguments: [ @tsCMS_menu.menuService ]
+        tags:
+            - { name: twig.extension }
