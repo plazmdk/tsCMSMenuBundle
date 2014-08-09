@@ -6,7 +6,7 @@
         }
     },
     "require": {
-        "tscms/system": "*",
+        "tscms/system": "dev-master",
         "lazyants/dynatree-bundle": "*"
     },
     "repositories": [
