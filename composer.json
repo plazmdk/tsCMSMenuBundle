@@ -5,6 +5,7 @@
             "tsCMS\\MenuBundle" : ""
         }
     },
+    "target-dir": "tsCMS/MenuBundle",
     "require": {
         "tscms/system": "dev-master",
         "lazyants/dynatree-bundle": "*"
