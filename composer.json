@@ -2,7 +2,7 @@
     "name": "tscms/menu",
     "autoload": {
         "psr-0" : {
-            "tsCMS\\MenuBundle" : "src"
+            "tsCMS\\MenuBundle" : ""
         }
     },
     "require": {
