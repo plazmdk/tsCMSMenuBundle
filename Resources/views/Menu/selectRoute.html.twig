@@ -38,7 +38,7 @@
             <ul class="pagination">
                 {% for p in pages %}
                     <li {% if p==page %}class="active"{% endif %}>
-                        <a href="#">
+                        <a href="{{ path("tscms_system_route_selectroute",{"query": query, "page": p }) }}" class="dialog">
                             {{ p }}
                         </a>
                     </li>
